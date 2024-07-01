@@ -14,8 +14,8 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import Booking from "./pages/Booking";
 import Checkin from "./pages/Checkin";
-import ProtectedRoute from "./ui/ProtectedRoute";
 import { DarkModeProvider } from "./context/darkModeContext";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 function App() {
   const queryClient = new QueryClient({

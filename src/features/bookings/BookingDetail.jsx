@@ -17,10 +17,12 @@ import {
   HiArrowUpOnSquare,
   HiTrash,
 } from "react-icons/hi2";
-import { useCkeckout } from "../check-in-out/useCheckout";
+
 import { useDeleteBooking } from "./useDeleteBooking";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
+import { useCheckout } from "../check-in-out/useCheckout";
+import Empty from "../../ui/Empty";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -30,12 +32,13 @@ const HeadingGroup = styled.div`
 
 function BookingDetail() {
   const { booking, isLoading } = useBooking();
-  const { checkout, isCheckingOut } = useCkeckout();
+  const { checkout, isCheckingOut } = useCheckout();
   const { deleteBooking, isDeleting } = useDeleteBooking();
   const moveBack = useMoveBack();
   const navigate = useNavigate();
 
   if (isLoading) return <Spinner />;
+  if (!booking) return <Empty resourceName="booking" />;
   const { status, id: bookingId } = booking;
 
   const statusToTagName = {

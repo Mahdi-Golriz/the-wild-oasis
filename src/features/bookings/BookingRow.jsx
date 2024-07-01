@@ -14,10 +14,11 @@ import {
   HiTrash,
 } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
-import { useCkeckout } from "../check-in-out/useCheckout";
+
 import { useDeleteBooking } from "./useDeleteBooking";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
+import { useCheckout } from "../check-in-out/useCheckout";
 
 const Cabin = styled.div`
   font-size: 1.6rem;
@@ -66,7 +67,7 @@ function BookingRow({
     "checked-out": "silver",
   };
 
-  const { checkout, isCheckingOut } = useCkeckout();
+  const { checkout, isCheckingOut } = useCheckout();
   const { deleteBooking, isDeleting } = useDeleteBooking();
   const navigate = useNavigate();
 
@@ -92,7 +93,7 @@ function BookingRow({
         </span>
       </Stacked>
 
-      <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
+      <Tag $type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
 
       <Amount>{formatCurrency(totalPrice)}</Amount>
       <Modal>
