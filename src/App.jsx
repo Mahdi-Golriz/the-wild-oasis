@@ -13,7 +13,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import Booking from "./pages/Booking";
 import Checkin from "./pages/Checkin";
-import { DarkModeProvider } from "./context/darkModeContext";
+import { DarkModeProvider } from "./context/DarkModeContext";
 import ProtectedRoute from "./ui/ProtectedRoute";
 
 function App() {

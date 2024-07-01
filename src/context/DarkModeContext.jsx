@@ -28,4 +28,4 @@ function useDarkMode() {
   return context;
 }
 
-export { useDarkMode, DarkModeProvider };
+export { DarkModeProvider, useDarkMode };
