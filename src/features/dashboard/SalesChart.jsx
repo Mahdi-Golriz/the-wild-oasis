@@ -57,11 +57,13 @@ function SalesChart({ bookins, numDays }) {
         background: "#fff",
       };
 
+  console.log(allDays);
+
   return (
     <StyledSalesChart>
       <Heading as="h2">
         Sales from {format(allDays.at(0), "MMMM dd yyyy")} &mdash;{" "}
-        {(allDays.at(-1), "MMMM dd yyyy")}
+        {format(allDays.at(-1), "MMMM dd yyyy")}
       </Heading>
 
       <ResponsiveContainer height={300} width="100%">
